@@ -4,6 +4,11 @@ import Section from './Section'
 
 const section = require("../api/section")
 
+// {
+// 	"name": "basics",
+// 	"subSections": [{"skill":"html", "description":"The markup language for all websites"},{"skill":"css", "description":"Basic understanding of CSS for styling websites"}]
+// }
+
 class SectionHandler extends Component {
     state = {
         section: []
