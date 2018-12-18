@@ -5,6 +5,7 @@ const path = require('path');
 const cors = require('cors')
 
 const mainLayout = require('./routes/api/MainLayout');
+const section = require('./routes/api/Section')
 
 const app = express();
 
@@ -23,6 +24,7 @@ mongoose
 
 // Use Routes
 app.use('/api/mainLayout', mainLayout);
+app.use('/api/section', section);
 
 // Serve static assets if in production
 // if (process.env.NODE_ENV === 'production') {
