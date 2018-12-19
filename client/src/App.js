@@ -10,6 +10,16 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/admin/">Admin</Link>
+              </li>
+            </ul>
+          </nav>
           <Route path="/" exact component={Home} />
           <Route path="/admin" exact component={Admin} />
         </div>
