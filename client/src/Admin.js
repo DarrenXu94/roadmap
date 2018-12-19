@@ -16,32 +16,11 @@ class Admin extends Component {
         console.log(this.state)
     }
 
-    addNewSubform = (event) => {
-        event.preventDefault();
+    submitSkillForm = (values) => {
         let newSS = this.state.subSections
-        newSS.push({"skill": "Enter Skill", "description": "Enter description", "key": Math.random().toString(36).substr(2, 9)})
+        newSS.push({"skill": values.skill, "description": values.description})
         this.setState({subSections: newSS})
     }
-
-    handleSubformChange = (event, key) => {
-        console.log(event.target.name, event.target.value, key)
-        // let formToUpdate = this.state.subSections.filter(obj => {
-        //     return obj.key === key
-        // })
-        // console.log(formToUpdate)
-        for (let i = 0; i < this.state.subSections.length; i++) {
-            if (this.state.subSections[i].key === key) {
-
-                let tempObject = this.state.subSections[i]
-                tempObject[event.target.name] = event.target.value
-                let tempArray = this.state.subSections
-                tempArray.splice(i,1)
-                tempArray.push(tempObject)
-                this.setState({subSections: tempArray})
-            };
-        }
-    }
-
     render() {
         return (
             <div>
@@ -52,9 +31,10 @@ class Admin extends Component {
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
-                <button onClick={this.addNewSubform}>+</button>
+                <FormSnippet submitSkillForm = {this.submitSkillForm} />
+
                 { this.state.subSections.map(entry=> {
-                    return <FormSnippet key={Math.random().toString(36).substr(2, 9)} entry={entry} handleSubformChange={this.handleSubformChange} />
+                    return <div key={Math.random().toString(36).substr(2, 9)}><h3>{entry.skill}</h3><p>{entry.description}</p></div>
                 })}
             </div>
         );
