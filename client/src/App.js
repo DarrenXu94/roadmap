@@ -1,27 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
-import SectionHandler from './components/SectionHandler'
-
-const mainLayout = require("./api/mainLayout")
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Home from './Home'
+import Admin from './Admin'
 
 class App extends Component {
 
-  state = {
-    sections: null
-  }
-
-  componentDidMount(){
-    mainLayout()
-    .then(res => this.setState({sections:res.data[0].sections}))
-  }
-
   render() {
-    let { sections } = this.state
     return (
-      <div className="App">
-        {/* {sections.toString()} */}
-        { sections && <SectionHandler sections = {sections} />}
-      </div>
+      <Router>
+        <div className="App">
+          <Route path="/" exact component={Home} />
+          <Route path="/admin" exact component={Admin} />
+        </div>
+      </Router>
     );
   }
 }
