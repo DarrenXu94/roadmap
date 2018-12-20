@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import FormSnippet from './components/FormSnippet'
 import { postSection } from './api/section'
+const mainLayout = require("./api/mainLayout")
 
 class Admin extends Component {
     state = {
         name: null,
-        subSections: []
+        subSections: [],
+        allSections: null
+    }
+    componentDidMount() {
+        mainLayout()
+            .then(res => this.setState({ allSections: res.data[0].sections }))
     }
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
@@ -14,7 +20,7 @@ class Admin extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        console.log(this.state)
+        // console.log(this.state)
         postSection(this.state)
             .then(function (response) {
                 console.log(response);
@@ -33,11 +39,15 @@ class Admin extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                {/* This should be dropdown instead */}
                     <label>
                         Name:
-                        <input type="text" name="name" value={this.state.value} onChange={this.handleChange} />
+                    <select name="name" value={this.state.value} onChange={this.handleChange}>
+                            {this.state.allSections && this.state.allSections.map(sec => {
+                                return <option key={sec} value={sec}>{sec}</option>
+                            })}
+                        </select>
                     </label>
+
                     <input type="submit" value="Submit" />
                 </form>
                 <FormSnippet submitSkillForm={this.submitSkillForm} />
