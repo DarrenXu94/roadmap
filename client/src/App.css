@@ -42,7 +42,7 @@ nav a#openup {
 }
 
 .section {
-    padding: 2rem 0;
+    /* padding: 2rem 0; */
     text-align: center;
 }
 
@@ -70,6 +70,12 @@ nav a#openup {
 
 }
 
+.bg-light {
+    background: #eee;
+    color: #333;
+
+}
+
 .sec {
     padding: 5px;
 }
@@ -82,7 +88,15 @@ footer {
     padding: 2.2rem;
 }
 
-.showcase::after {
+.showcase {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.showcase::before {
     content: '';
     height: 100vh;
     width: 100%;
@@ -91,12 +105,50 @@ footer {
     background-repeat: no-repeat;
     background-position: bottom;
     display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
     
 }
 
-@media(max-width: 960px) {
+.section-main {
+    margin-top: 25vh;
+    text-align: center;
 
-    .showcase::after {
+}
+
+.show-on-small {
+    display: none;
+}
+
+.mobile-title {
+    text-align: center;
+}
+
+.mobile-title h1 {
+    margin: 0;
+    padding-top: 2rem;
+}
+
+.mobile-title p {
+    margin: 0;
+    padding: 0;
+}
+
+@media(max-width: 960px) {
+    .hide-on-small {
+        display: none;
+    }
+    .show-on-small {
+        display: block;
+        padding: 0;
+
+    }
+    .showcase {
+        height: 50vh;
+    }
+    .showcase::before {
         height: 50vh;
     }
 }
