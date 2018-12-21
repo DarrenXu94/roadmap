@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-        <header className="showcase">
+        <header>
           <nav className='cf'>
             <ul className='cf'>
               <li>

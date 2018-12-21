@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import SectionHandler from './components/SectionHandler'
 const mainLayout = require("./api/mainLayout")
 
@@ -15,10 +15,13 @@ class Home extends Component {
         let { sections } = this.state
 
         return (
-            <section className="section home">
-                {sections && <SectionHandler sections={sections} />}
+            <Fragment>
+                <div className="showcase"></div>
+                <section className="section home">
+                    {sections && <SectionHandler sections={sections} />}
 
-            </section>
+                </section>
+            </Fragment>
         );
     }
 }
