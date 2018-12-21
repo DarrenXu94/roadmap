@@ -36,8 +36,9 @@ class SectionHandler extends Component {
         let {section} = this.state
         return (
             <div>
-                { section.length > 0 && section.map(sec => {
-                    return <Section key={sec[0]._id} data = {sec[0]} />
+                { section.length > 0 && section.map((sec, idx) => {
+                    let bgColour = (idx % 2 === 1) ? "bg-dark" : "bg-light"
+                    return <Section className={bgColour} key={sec[0]._id} data = {sec[0]} />
                 })}
             </div>
         );

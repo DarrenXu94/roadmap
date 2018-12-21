@@ -1,0 +1,71 @@
+.cf:before, .cf:after {
+    content: "";
+    display: table;
+  }
+  
+  .cf:after {
+    clear: both;
+  }
+  
+  .cf {
+    zoom: 1;
+  }
+  nav {
+    height: 40px;
+    width: 100%;
+    background-color: #333;
+    color: #eee;
+    position: fixed;
+}
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+nav li {
+    display: inline;
+    float: left;
+}
+nav a {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0;
+    color: #eee;
+    text-decoration: none;
+}
+nav li:hover {
+    background-color: #444;
+}
+nav a#openup {
+    display: none;
+}
+
+.section {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.section-head {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.section h3 {
+    font-size: 2rem;
+}
+
+.admin {
+    padding-top: 5vh;
+
+}
+
+.bg-dark {
+    background: #333;
+    color: #eee;
+
+}
+
+.sec {
+    padding: 5px;
+}

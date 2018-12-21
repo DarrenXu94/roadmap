@@ -15,10 +15,10 @@ class Home extends Component {
         let { sections } = this.state
 
         return (
-            <div>
+            <section className="section home">
                 {sections && <SectionHandler sections={sections} />}
 
-            </div>
+            </section>
         );
     }
 }

@@ -37,7 +37,7 @@ class Admin extends Component {
     }
     render() {
         return (
-            <div>
+            <section className="section admin">
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Name:
@@ -55,7 +55,7 @@ class Admin extends Component {
                 {this.state.subSections.map(entry => {
                     return <div key={Math.random().toString(36).substr(2, 9)}><h3>{entry.skill}</h3><p>{entry.description}</p></div>
                 })}
-            </div>
+            </section>
         );
     }
 }

@@ -8,7 +8,7 @@ class Section extends Component {
     render() {
         let { name, subSections } = this.props.data
         return (
-            <div>
+            <div className={`${this.props.className} sec`} >
                 <h1>{ name }</h1>
                 <div>
                 { subSections.map(sub => {
@@ -22,7 +22,8 @@ class Section extends Component {
 }
 
 Section.propTypes = {
-    data: PropTypes.object
+    data: PropTypes.object,
+    className: PropTypes.string
   };
 
 export default Section;
