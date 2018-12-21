@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-        <header>
+        <header className="showcase">
           <nav className='cf'>
             <ul className='cf'>
               <li>
@@ -25,6 +25,9 @@ class App extends Component {
 
           <Route path="/" exact component={Home} />
           <Route path="/admin" exact component={Admin} />
+          <footer className="bg-dark center">
+            Darren Xu © 2018
+          </footer>
         </div>
       </Router>
     );
