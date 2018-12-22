@@ -167,6 +167,10 @@ a.btn-dark:hover{
     background-color:#eee;
 }
 
+.btn-active {
+    font-size: 1.2rem;
+}
+
 @media(max-width: 1490px) {
 
     .section-main {
