@@ -113,13 +113,14 @@ footer {
 }
 
 .section-main {
-    margin-top: 25vh;
+    display: none;
+    margin-top: 5vh;
     text-align: center;
 
 }
 
 .show-on-small {
-    display: none;
+    display: block;
 }
 
 .mobile-title {
@@ -134,6 +135,18 @@ footer {
 .mobile-title p {
     margin: 0;
     padding: 0;
+}
+
+@media(max-width: 1490px) {
+
+    .section-main {
+        display: block;
+        margin-top: 25vh;
+
+    }
+    .show-on-small {
+        display: none;
+    }
 }
 
 @media(max-width: 960px) {
@@ -152,3 +165,4 @@ footer {
         height: 50vh;
     }
 }
+
