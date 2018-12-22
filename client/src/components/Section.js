@@ -27,17 +27,13 @@ class Section extends Component {
                 <h1>{ name }</h1>
                 <div>
                 { subSections.map(sub => {
-                    let { skill, description } = sub
-                    return <div key={ skill }><h3>{ skill }</h3><p>{ description }</p></div>
-                })}
-                { subSections.map(sub => {
                     let active = (this.state.skillSelected === sub.skill) ? "btn-active" : ""
                     /*eslint-disable */
                     return <a onClick={()=>this.showDescription(sub)} className={`subSection-button ${buttonColor} ${active}`} key={sub.skill}>{ sub.skill }</a>
                     /*eslint-enable */
                 })}
                 </div>
-                <div>{this.state.description}</div>
+                <div className="subSection-description"><h3>{ this.state.skillSelected }</h3><p>{ this.state.description }</p></div>
             </div>
         );
     }

@@ -112,6 +112,15 @@ footer {
     
 }
 
+.subSection-description {
+    width: 75vw;
+    margin: auto;
+}
+
+.subSection-description p{
+    line-height: 1.7rem;
+}
+
 .section-main {
     display: none;
     margin-top: 5vh;
