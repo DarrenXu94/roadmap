@@ -17,13 +17,13 @@ class Home extends Component {
         return (
             <Fragment>
                 <div className="showcase">
-                <div class="section-main hide-on-small">
+                <div className="section-main hide-on-small">
                     <h1>Web Developer Roadmap</h1>
-                    <p class="hide-on-small">My personal take on the state of Web Development as of 2018</p>
+                    <p className="hide-on-small">My personal take on the state of Web Development as of 2018</p>
                 </div>
                 </div>
                 <div className="show-on-small bg-light">
-                <div class="mobile-title">
+                <div className="mobile-title">
                     <h1>Web Developer Roadmap</h1>
                     <p>My personal take on the state of Web Development as of 2018</p>
                 </div>

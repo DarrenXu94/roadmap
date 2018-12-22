@@ -40,6 +40,7 @@ class SectionHandler extends Component {
                     let bgColour = (idx % 2 === 1) ? "bg-dark" : "bg-light"
                     return <Section className={bgColour} key={sec[0]._id} data = {sec[0]} />
                 })}
+                
             </div>
         );
     }

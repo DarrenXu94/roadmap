@@ -137,6 +137,36 @@ footer {
     padding: 0;
 }
 
+a.subSection-button {
+    display:inline-block;
+    padding:0.35em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    text-align:center;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+a.btn-light{
+    border:0.1em solid #333;
+    color:#333;
+}
+a.btn-light:hover{
+    color:#eee;
+    background-color:#333;
+}
+
+a.btn-dark{
+    border:0.1em solid #eee;
+    color:#eee;
+}
+a.btn-dark:hover{
+    color:#333;
+    background-color:#eee;
+}
+
 @media(max-width: 1490px) {
 
     .section-main {
