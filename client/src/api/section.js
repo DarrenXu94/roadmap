@@ -1,12 +1,13 @@
 const axios = require('axios');
+const HEROKU_URL = require('../config/config').HEROKU_URL
 
 module.exports = {
     getSection: (name) => {
-        return axios.get(`http://localhost:5000/api/section/${name}`)
+        return axios.get(`${HEROKU_URL}/api/section/${name}`)
 
     },
     postSection: (obj) => {
-        return axios.post('http://localhost:5000/api/section', {
+        return axios.post(`${HEROKU_URL}/api/section`, {
             name: obj.name,
             subSections: obj.subSections
           })
