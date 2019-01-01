@@ -23,7 +23,8 @@ router.get('/:name', (req, res) => {
 router.post('/', (req, res) => {
     const newItem = {
         name: req.body.name,
-        subSections: req.body.subSections
+        subSections: req.body.subSections,
+        order: req.body.order
     }
     Section.findOneAndUpdate({ name: req.body.name }, newItem, { upsert: true })
         .then(items => res.json(items));
