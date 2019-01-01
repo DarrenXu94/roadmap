@@ -14,33 +14,31 @@ class SectionHandler extends Component {
         section: []
     }
 
-    sectionLooper = (arrayOfSections) => {
-        for (let sec of arrayOfSections){
+    sectionLooper = async (arrayOfSections) => {
+        for (let sec of arrayOfSections) {
             console.log(sec)
-            section.getSection(sec)
-            .then(res => {
-                let newState = this.state.section
-                if (res.data.length !== 0 ) {
-                    newState.push(res.data)
-                }
-                this.setState({section: newState })
-            })
+            let res = await section.getSection(sec)
+            let newState = this.state.section
+            if (res.data.length !== 0) {
+                newState.push(res.data)
+            }
+            this.setState({ section: newState })
 
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.sectionLooper(this.props.sections)
     }
     render() {
-        let {section} = this.state
+        let { section } = this.state
         return (
             <div>
-                { section.length > 0 && section.map((sec, idx) => {
+                {section.length > 0 && section.map((sec, idx) => {
                     let bgColour = (idx % 2 === 1) ? "bg-dark" : "bg-light"
-                    return <Section className={bgColour} key={sec[0]._id} data = {sec[0]} />
+                    return <Section className={bgColour} key={sec[0]._id} data={sec[0]} />
                 })}
-                
+
             </div>
         );
     }
@@ -48,6 +46,6 @@ class SectionHandler extends Component {
 
 SectionHandler.propTypes = {
     sections: PropTypes.arrayOf(PropTypes.string)
-  };
+};
 
 export default SectionHandler;
