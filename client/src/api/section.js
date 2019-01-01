@@ -9,7 +9,8 @@ module.exports = {
     postSection: (obj) => {
         return axios.post(`${HEROKU_URL}/api/section`, {
             name: obj.name,
-            subSections: obj.subSections
+            subSections: obj.subSections,
+            order:obj.order
           })
           
     }

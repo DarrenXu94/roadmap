@@ -6,6 +6,9 @@ const SectionSchema = new Schema({
   name: {
     type: String
   },
+  order: {
+    type: Number
+  },
   subSections: 
     [{
         skill: String,

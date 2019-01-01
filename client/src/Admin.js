@@ -5,22 +5,28 @@ const mainLayout = require("./api/mainLayout")
 
 class Admin extends Component {
     state = {
-        name: null,
+        name: "basics",
         subSections: [],
-        allSections: null
+        allSections: null,
+        order: 0
     }
     componentDidMount() {
         mainLayout()
             .then(res => this.setState({ allSections: res.data[0].sections }))
     }
     handleChange = (event) => {
+        // console.log(Object.keys(event.target))
+        if (event.target.name === "name"){
+            this.setState({order: this.state.allSections.indexOf(event.target.value) })
+        }
         this.setState({ [event.target.name]: event.target.value });
     }
+
 
     handleSubmit = (event) => {
         event.preventDefault();
 
-        // console.log(this.state)
+        console.log(this.state)
         postSection(this.state)
             .then(function (response) {
                 console.log(response);
