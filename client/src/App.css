@@ -122,9 +122,14 @@ footer {
 }
 
 .section-main {
-    display: none;
-    margin-top: 5vh;
+    display: block;
+    width: 50vw;
+    margin: auto;
+    margin-top: 25vh;
     text-align: center;
+    background-color: #eee;
+    padding: 0.5rem;
+    border-radius: 10px;
 
 }
 
