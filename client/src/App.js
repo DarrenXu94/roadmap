@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom"; // Link
 import Home from './Home'
 import Admin from './Admin'
 
@@ -13,12 +13,13 @@ class App extends Component {
         <header>
           <nav className='cf'>
             <ul className='cf'>
-              <li>
+              {/* <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
                 <Link to="/admin/">Admin</Link>
-              </li>
+              </li> */}
+              <li><b>Web Development Roadmap</b></li>
             </ul>
           </nav>
           </header>

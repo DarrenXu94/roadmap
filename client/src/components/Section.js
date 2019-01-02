@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Section extends Component {
-    componentDidMount(){
-        console.log(this.props.data)
-    }
+    
     state = {
         skillSelected: "",
         description: ""

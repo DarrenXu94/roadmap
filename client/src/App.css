@@ -34,9 +34,17 @@ nav a {
     color: #eee;
     text-decoration: none;
 }
-nav li:hover {
-    background-color: #444;
+nav b {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    color: #eee;
+    text-decoration: none;
 }
+/* nav li:hover {
+    background-color: #444;
+} */
 nav a#openup {
     display: none;
 }

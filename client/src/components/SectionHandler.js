@@ -16,7 +16,7 @@ class SectionHandler extends Component {
 
     sectionLooper = async (arrayOfSections) => {
         for (let sec of arrayOfSections) {
-            console.log(sec)
+            // console.log(sec)
             let res = await section.getSection(sec)
             let newState = this.state.section
             if (res.data.length !== 0) {
