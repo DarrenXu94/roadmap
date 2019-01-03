@@ -141,6 +141,12 @@ footer {
 
 }
 
+.see-more {
+    text-align: center;
+    margin-top: 50vh;
+    color: #eee;
+}
+
 .show-on-small {
     display: block;
 }

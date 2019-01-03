@@ -17,16 +17,19 @@ class Home extends Component {
         return (
             <Fragment>
                 <div className="showcase">
-                <div className="section-main hide-on-small">
-                    <h1>Web Developer Roadmap</h1>
-                    <p className="hide-on-small">My personal take on the state of Web Development as of 2019</p>
-                </div>
+                    <div className="section-main hide-on-small">
+                        <h1>Web Developer Roadmap</h1>
+                        <p className="hide-on-small">My personal take on the state of Web Development as of 2019</p>
+                    </div>
+                    <div className="see-more">
+                        <i className="fas fa-angle-double-down fa-6x"></i>
+                    </div>
                 </div>
                 <div className="show-on-small bg-light">
-                <div className="mobile-title">
-                    <h1>Web Developer Roadmap</h1>
-                    <p>My personal take on the state of Web Development as of 2019</p>
-                </div>
+                    <div className="mobile-title">
+                        <h1>Web Developer Roadmap</h1>
+                        <p>My personal take on the state of Web Development as of 2019</p>
+                    </div>
                 </div>
                 <section className="section home">
                     {sections && <SectionHandler sections={sections} />}
