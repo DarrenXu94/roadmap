@@ -18,7 +18,6 @@ class Home extends Component {
 
     scrollToMyRef = () => {
         window.scrollTo(0, this.myRef.current.offsetTop)
-        console.log('click reached')
     }
 
     render() {

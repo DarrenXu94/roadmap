@@ -23,7 +23,7 @@ class Section extends Component {
         return (
             <div className={`${className} sec`} >
                 <h1>{ name }</h1>
-                <div>
+                <div style={{width: "70vw", margin: "auto"}}>
                 { subSections.map(sub => {
                     let active = (this.state.skillSelected === sub.skill) ? "btn-active" : ""
                     /*eslint-disable */
@@ -31,7 +31,8 @@ class Section extends Component {
                     /*eslint-enable */
                 })}
                 </div>
-                <div className="subSection-description"><h3>{ this.state.skillSelected }</h3><p>{ this.state.description }</p></div>
+                <div className="subSection-description"><h3>{ this.state.skillSelected }</h3>
+                <p style={{fontSize: "1.3rem"}}>{ this.state.description }</p></div>
             </div>
         );
     }

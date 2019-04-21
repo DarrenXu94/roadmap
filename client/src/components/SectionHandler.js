@@ -27,18 +27,23 @@ class SectionHandler extends Component {
         }
     }
 
+    sectionRender = () => {
+        let { section } = this.state
+
+        return (section.length > 0) ? section.map((sec, idx) => {
+            let bgColour = (idx % 2 === 1) ? "bg-dark" : "bg-light"
+            return <Section className={bgColour} key={sec[0]._id} data={sec[0]} />
+        }) : <div>Loading sections ... </div>
+    }
+
     componentDidMount() {
         this.sectionLooper(this.props.sections)
     }
+
     render() {
-        let { section } = this.state
         return (
             <div>
-                {section.length > 0 && section.map((sec, idx) => {
-                    let bgColour = (idx % 2 === 1) ? "bg-dark" : "bg-light"
-                    return <Section className={bgColour} key={sec[0]._id} data={sec[0]} />
-                })}
-
+                {this.sectionRender()}
             </div>
         );
     }
