@@ -11,8 +11,10 @@ class Admin extends Component {
         order: 0
     }
     componentDidMount() {
-        mainLayout()
-            .then(res => this.setState({ allSections: res.data[0].sections }))
+        // mainLayout()
+            // .then(res => this.setState({ allSections: res.data[0].sections }))
+        let sections = mainLayout
+        this.setState({ allSections: sections })
     }
     handleChange = (event) => {
         // console.log(Object.keys(event.target))

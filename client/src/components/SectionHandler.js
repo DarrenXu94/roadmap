@@ -19,8 +19,8 @@ class SectionHandler extends Component {
             // console.log(sec)
             let res = await section.getSection(sec)
             let newState = this.state.section
-            if (res.data.length !== 0) {
-                newState.push(res.data)
+            if (res.length !== 0) {
+                newState.push(res)
             }
             this.setState({ section: newState })
 
@@ -30,10 +30,12 @@ class SectionHandler extends Component {
     sectionRender = () => {
         let { section } = this.state
 
-        return (section.length > 0) ? section.map((sec, idx) => {
+        return (section.length > 0) 
+        ? section.map((sec, idx) => {
             let bgColour = (idx % 2 === 1) ? "bg-dark" : "bg-light"
             return <Section className={bgColour} key={sec[0]._id} data={sec[0]} />
-        }) : <div>Loading sections ... </div>
+        }) 
+        : <div>Loading sections ... </div>
     }
 
     componentDidMount() {

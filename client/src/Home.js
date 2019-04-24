@@ -12,8 +12,8 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        mainLayout()
-            .then(res => this.setState({ sections: res.data[0].sections }))
+        let sections = mainLayout()
+        this.setState({ sections })
     }
 
     scrollToMyRef = () => {
